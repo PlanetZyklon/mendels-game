@@ -14,8 +14,16 @@ public class BuildManager : MonoBehaviour
 
     public Transform tileGridUI;    // tiles we add from UITiles
 
+    //  for creating a new plant object on click
+    private Vector3 mousePos;
+    private Vector3 objectPos;
+    private Camera cam;
+    public GameObject plantPrefab;  // Plant prefab
+
     private void Start()
     {
+        cam = Camera.main;
+
         int i = 0;
 
         //creates our UI
@@ -58,8 +66,15 @@ public class BuildManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            mousePos = Input.mousePosition;
+            mousePos.z = 2.0f;
+            objectPos = cam.ScreenToWorldPoint(mousePos);
+            Debug.Log("Mouse spawn coords: " + objectPos);
+            GameObject plantObject = Instantiate(plantPrefab, objectPos, Quaternion.identity);
+            /*
             Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             tilemap.SetTile(tilemap.WorldToCell(position), tiles[selectedTile]);
+            */
         }
     }
 
