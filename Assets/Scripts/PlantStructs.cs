@@ -1,37 +1,36 @@
 public struct plantStats
 {
-    double water;
-    double health;
-    double maturityTimer;
-    double nutrition;
+    float water;
+    float health;
+    float maturityTimer;
+    float nutrition;
 
-    public plantStats(double water, double health, double maturityTimer, double nutrition)
+    public plantStats(float water, float health, float maturityTimer, float nutrition)
     {
         this.water = water;
         this.health = health;
         this.maturityTimer = maturityTimer;
         this.nutrition = nutrition;
     }
+}
+public struct plantGenes
+{
+    float maxHealth;
+    float healingRate;
+    float maturityTime;
+    float waterCap;
+    float nutritionCap;
+    float nutritionRate;
+    float waterRate;
 
-    public struct plantGenes
+    public plantGenes(float maxHealth, float healingRate, float maturityTime, float waterCapacity, float nutritionCapacity, float waterRate, float nutritionRate)
     {
-        double maxHealth;
-        double healingRate;
-        double maturityTime;
-        double waterCap;
-        double nutritionCap;
-        double nutritionRate;
-        double waterRate;
-
-        public plantGenes(double maxHealth, double healingRate, double maturityTime, double waterCapacity, double nutritionCapacity, double waterRate, double nutritionRate)
-        {
-            this.maxHealth = maxHealth;
-            this.healingRate = healingRate;
-            this.maturityTime = maturityTime;
-            this.waterCap = waterCapacity;
-            this.nutritionCap = nutritionCapacity;
-            this.waterRate = waterRate;
-            this.nutritionRate = nutritionRate;
-        }
+        this.maxHealth = maxHealth;
+        this.healingRate = healingRate;
+        this.maturityTime = maturityTime;
+        this.waterCap = waterCapacity;
+        this.nutritionCap = nutritionCapacity;
+        this.waterRate = waterRate;
+        this.nutritionRate = nutritionRate;
     }
 }
