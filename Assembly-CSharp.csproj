@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\Plant.cs" />
     <Compile Include="Assets\Scripts\genetics.cs" />
     <Compile Include="Assets\Scripts\Globals.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
