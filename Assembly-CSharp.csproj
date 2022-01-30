@@ -56,6 +56,7 @@
     <Compile Include="Assets\Scripts\PlantBehaviour.cs" />
     <Compile Include="Assets\Scripts\PlantStructs.cs" />
     <Compile Include="Assets\Scripts\BuildManager.cs" />
+    <Compile Include="Assets\Scripts\PlantHealth.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
