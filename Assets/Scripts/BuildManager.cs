@@ -43,4 +43,44 @@ public class BuildManager : MonoBehaviour
             i++;
         }
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            selectedTile = 0;
+            RenderUITiles();
+        } else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            selectedTile = 1;
+            RenderUITiles();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            tilemap.SetTile(tilemap.WorldToCell(position), tiles[selectedTile]);
+        }
+    }
+
+    void RenderUITiles()
+    {
+        int i = 0;
+
+        foreach (GameObject tile in UITiles)
+        {
+            Image UIImage = tile.GetComponent<Image>();
+            Color tileColor = UIImage.color;
+            tileColor.a = 0.5f;
+
+            if (i == selectedTile)
+            {
+                tileColor.a = 1f;
+            }
+
+            UIImage.color = tileColor;
+
+            i++;
+        }
+    }
 }

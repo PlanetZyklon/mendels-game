@@ -3004,9 +3004,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6c6a933caf40c43b01a70f56b250af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 0}
+  tilemap: {fileID: 862892545}
   tiles:
   - {fileID: 11400000, guid: d7fcd57feda912e41a07b86bfb0ce451, type: 2}
+  - {fileID: 11400000, guid: 79fd8018f3ccb2649b5d5bb5d0213aed, type: 2}
   UITiles: []
   selectedTile: 0
   tileGridUI: {fileID: 1157831650}
