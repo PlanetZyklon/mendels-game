@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
+using TMPro;    // Write code relating to UI element
 
 public class BuildManager : MonoBehaviour
 {
@@ -20,9 +21,18 @@ public class BuildManager : MonoBehaviour
     private Camera cam;
     public GameObject plantPrefab;  // Plant prefab
 
+    public TextMeshProUGUI dayCountText;
+    public int day;
+    public int dayUpdate;
+
     private void Start()
     {
         cam = Camera.main;
+
+        // displays day
+        day = 0;
+        dayUpdate = 5;
+        setDayText();
 
         int i = 0;
 
@@ -76,6 +86,13 @@ public class BuildManager : MonoBehaviour
             tilemap.SetTile(tilemap.WorldToCell(position), tiles[selectedTile]);
             */
         }
+
+        Debug.Log(Time.realtimeSinceStartup);
+        if (Time.realtimeSinceStartup > dayUpdate)
+        {
+            dayUpdate += 5;
+            setDayText();   // increases day every 10 seconds
+        }
     }
 
     void RenderUITiles()
@@ -97,5 +114,11 @@ public class BuildManager : MonoBehaviour
 
             i++;
         }
+    }
+
+    void setDayText()
+    {
+        day += 1;
+        dayCountText.text = "Day " + day;
     }
 }
