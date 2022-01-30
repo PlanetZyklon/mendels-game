@@ -10,9 +10,9 @@ public struct plantStats {
         this.maturityTimer = maturityTimer;
         this.nutrition = nutrition;
     }
-
+}
 public struct plantGenes {
-    double maxHealth;
+    int maxHealth;
     double healingRate;
     double maturityTime;
     double waterCap;
