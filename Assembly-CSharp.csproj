@@ -53,6 +53,8 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\PlantBehaviour.cs" />
+    <Compile Include="Assets\Scripts\PlantStructs.cs" />
     <Compile Include="Assets\Scripts\BuildManager.cs" />
   </ItemGroup>
   <ItemGroup>
