@@ -1,3 +1,5 @@
+public static int DNA_LENGTH = 7;
+
 public struct plantStats {
     double water;
     double health;
