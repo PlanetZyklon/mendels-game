@@ -17,6 +17,11 @@ public class PlantBehaviour : MonoBehaviour
     public Sprite deadMaturePlant;  // dead grown plant sprite
     public bool isMature;
     public bool isAlive;
+    bool grownOnce;
+
+    AudioSource audioSource;
+
+    public AudioClip growSound;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +29,9 @@ public class PlantBehaviour : MonoBehaviour
         maturtiyTimer = maturityTime;
         isMature = false;
         isAlive = true;
+        grownOnce = false;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,10 +39,12 @@ public class PlantBehaviour : MonoBehaviour
     {
         maturtiyTimer -= Time.deltaTime;
 
-        if (maturtiyTimer < 0 && isAlive)
+        if (maturtiyTimer < 0 && isAlive && !grownOnce)
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = maturePlant;
             isMature = true;
+            grownOnce = true;
+            audioSource.PlayOneShot(growSound);
         }
 
         // checks if the sprite is alive

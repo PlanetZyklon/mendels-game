@@ -25,9 +25,15 @@ public class BuildManager : MonoBehaviour
     public int day;
     public int dayUpdate;
 
+    AudioSource audioSource;
+
+    public AudioClip digSound;
+
     private void Start()
     {
         cam = Camera.main;
+
+        audioSource = GetComponent<AudioSource>();
 
         // displays day
         day = 0;
@@ -79,15 +85,16 @@ public class BuildManager : MonoBehaviour
             mousePos = Input.mousePosition;
             mousePos.z = 2.0f;
             objectPos = cam.ScreenToWorldPoint(mousePos);
-            Debug.Log("Mouse spawn coords: " + objectPos);
+            // Debug.Log("Mouse spawn coords: " + objectPos);
             GameObject plantObject = Instantiate(plantPrefab, objectPos, Quaternion.identity);
             /*
             Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             tilemap.SetTile(tilemap.WorldToCell(position), tiles[selectedTile]);
             */
+            audioSource.PlayOneShot(digSound);
         }
 
-        Debug.Log(Time.realtimeSinceStartup);
+        // Debug.Log(Time.realtimeSinceStartup);
         if (Time.realtimeSinceStartup > dayUpdate)
         {
             dayUpdate += 5;
